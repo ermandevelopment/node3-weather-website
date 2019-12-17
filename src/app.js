@@ -11,6 +11,8 @@ const express = require('express')
 
 // initialize express app
 const app = express()
+// Add heroku environment variable
+const port = process.env.PORT || 3000
 
 // import handlebars hbs for partials
 const hbs = require('hbs')
@@ -129,7 +131,7 @@ app.get('*', (req, res) => {
 })
 
 // Listen to port and display message when it is up and running
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('Server is up on port 3000')
 })
 
